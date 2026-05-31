@@ -215,11 +215,8 @@ async function updateQuizzes(){
 
 try{
 
-const response = await fetch(
-"https://YOUR-WEBSITE/quizzes.json"
-);
-
-const data = await response.json();
+const response = await fetch("https://ko-lay926.github.io/EngTeston/quizzes.json");
+ const data = await response.json();
 
 quizData = data;
 
