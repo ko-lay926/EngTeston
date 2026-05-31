@@ -228,12 +228,14 @@ JSON.stringify(data)
 alert(
 "Weekly quizzes updated successfully!"
 );
-
+ 
 }catch(error){
 
 alert(
-"No internet connection. Using saved quizzes."
+"Update failed: " + error.message
 );
+
+console.log(error);
 
 }
 
