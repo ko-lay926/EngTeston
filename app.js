@@ -457,6 +457,13 @@ unlocked.push("week3");
 
 }
 
+if(currentWeek === "week3"
+&& !unlocked.includes("week4")){
+
+unlocked.push("week4");
+
+}
+
 localStorage.setItem(
 "unlockedWeeks",
 JSON.stringify(unlocked)
@@ -495,7 +502,7 @@ function getWeekName(week){
 if(week === "week1") return "Week 1";
 if(week === "week2") return "Week 2";
 if(week === "week3") return "Week 3";
-
+if(week === "week4") return "Week 4";
 return week;
 
 }
