@@ -1,14 +1,54 @@
 "week4": {
   "questions": [
-    {q:"While I ___, my brother was sleeping.", options:["study","studied","was studying"], answer:2},
-    {q:"She ___ her homework before dinner yesterday.", options:["finish","finished","finishes"], answer:1},
-    {q:"They ___ TV when I arrived.", options:["watched","were watching","watch"], answer:1},
-    {q:"He ___ his uncle next weekend.", options:["visit","visited","will visit"], answer:2},
-    {q:"We ___ English since Grade 1.", options:["learn","have learned","learned"], answer:1},
-    {q:"The baby ___ peacefully now.", options:["sleep","sleeps","is sleeping"], answer:2},
-    {q:"I ___ this movie before.", options:["see","saw","have seen"], answer:2},
-    {q:"She ___ dinner at the moment.", options:["cook","cooked","is cooking"], answer:2},
-    {q:"They ___ to the museum yesterday.", options:["go","went","going"], answer:1},
-    {q:"He ___ a letter every month.", options:["writes","wrote","writing"], answer:0}
+    {
+      "q": "While I ___, my brother was sleeping.",
+      "options": ["study", "studied", "was studying"],
+      "answer": 2
+    },
+    {
+      "q": "She ___ her homework before dinner yesterday.",
+      "options": ["finish", "finished", "finishes"],
+      "answer": 1
+    },
+    {
+      "q": "They ___ TV when I arrived.",
+      "options": ["watched", "were watching", "watch"],
+      "answer": 1
+    },
+    {
+      "q": "He ___ his uncle next weekend.",
+      "options": ["visit", "visited", "will visit"],
+      "answer": 2
+    },
+    {
+      "q": "We ___ English since Grade 1.",
+      "options": ["learn", "have learned", "learned"],
+      "answer": 1
+    },
+    {
+      "q": "The baby ___ peacefully now.",
+      "options": ["sleep", "sleeps", "is sleeping"],
+      "answer": 2
+    },
+    {
+      "q": "I ___ this movie before.",
+      "options": ["see", "saw", "have seen"],
+      "answer": 2
+    },
+    {
+      "q": "She ___ dinner at the moment.",
+      "options": ["cook", "cooked", "is cooking"],
+      "answer": 2
+    },
+    {
+      "q": "They ___ to the museum yesterday.",
+      "options": ["go", "went", "going"],
+      "answer": 1
+    },
+    {
+      "q": "He ___ a letter every month.",
+      "options": ["writes", "wrote", "writing"],
+      "answer": 0
+    }
   ]
 }
