@@ -1,53 +1,79 @@
 name: Build APK
 
 on:
-  workflow_dispatch: {}
+workflow_dispatch: {}
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+build:
+runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v4
+steps:
+  - name: Checkout code
+    uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
+  - name: Setup Node.js
+    uses: actions/setup-node@v4
+    with:
+      node-version: '20'
 
-      - name: Create package.json if missing
-        run: |
-          if [ ! -f package.json ]; then
-            echo '{"name":"engteston","version":"1.0.0"}' > package.json
-          fi
+  - name: Show repository contents
+    run: |
+      echo "Current directory:"
+      pwd
+      echo ""
+      echo "Files:"
+      ls -la
 
-      - name: Install Capacitor
-        run: |
-          npm install
-          npm install @capacitor/core @capacitor/cli @capacitor/android
+  - name: Create package.json if missing
+    run: |
+      if [ ! -f package.json ]; then
+        echo '{"name":"engteston","version":"1.0.0","private":true}' > package.json
+      fi
 
-      - name: Initialize Capacitor
-        run: |
-          if [ ! -f capacitor.config.json ]; then
-            npx cap init EngTeston com.engteston.app --web-dir=.
-          fi
+  - name: Install dependencies
+    run: |
+      npm install
+      npm install @capacitor/core @capacitor/cli @capacitor/android --save
 
-      - name: Add Android
-        run: |
-          if [ ! -d android ]; then
-            npx cap add android
-          fi
+  - name: Debug environment
+    run: |
+      echo "Node:"
+      node -v
+      echo "NPM:"
+      npm -v
+      echo "Capacitor:"
+      npx cap --version
+      echo "Files:"
+      ls -la
 
-      - name: Sync
-        run: npx cap sync
+  - name: Initialize Capacitor
+    run: |
+      if [ ! -f capacitor.config.json ] && [ ! -f capacitor.config.ts ]; then
+        npx cap init "EngTeston" com.engteston.app --web-dir=.
+      fi
 
-      - name: Build APK
-        run: |
-          cd android
-          chmod +x gradlew
-          ./gradlew assembleDebug
+  - name: Add Android platform
+    run: |
+      if [ ! -d android ]; then
+        npx cap add android
+      fi
 
-      - name: Upload APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: app-debug
-          path: android/app/build/outputs/apk/debug/app-debug.apk
+  - name: Debug Android folder
+    run: |
+      ls -la
+      ls -la android || true
+
+  - name: Sync Capacitor
+    run: npx cap sync android
+
+  - name: Build APK
+    run: |
+      cd android
+      chmod +x gradlew
+      ./gradlew assembleDebug
+
+  - name: Upload APK
+    uses: actions/upload-artifact@v4
+    with:
+      name: engtest-apk
+      path: android/app/build/outputs/apk/debug/app-debug.apk
