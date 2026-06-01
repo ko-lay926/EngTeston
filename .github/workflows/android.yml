@@ -1,33 +1,44 @@
 name: Build APK
 
 on:
-workflow_dispatch
+  workflow_dispatch:
 
 jobs:
-build:
+  build:
+    runs-on: ubuntu-latest
 
-runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-steps:
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-  - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm install
 
-  - uses: actions/setup-node@v4
-    with:
-      node-version: 20
+      - name: Install Capacitor CLI
+        run: npm install @capacitor/core @capacitor/cli @capacitor/android
 
-  - run: npm install
+      - name: Initialize Capacitor
+        run: npx cap init "English Grammar Quiz" com.engtest.quiz --web-dir=.
 
-  - run: npx cap add android
+      - name: Add Android platform
+        run: npx cap add android
 
-  - run: npx cap sync android
+      - name: Sync web files
+        run: npx cap sync android
 
-  - run: |
-      cd android
-      chmod +x gradlew
-      ./gradlew assembleDebug
+      - name: Build APK
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleDebug
 
-  - uses: actions/upload-artifact@v4
-    with:
-      name: apk
-      path: android/app/build/outputs/apk/debug/app-debug.apk
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: engtest-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
