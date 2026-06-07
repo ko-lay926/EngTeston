@@ -215,7 +215,7 @@ async function updateQuizzes(){
 
 try{
 
-const response = await fetch("https://ko-lay926.github.io/EngTeston/www/quizzes.json");
+const response = await fetch("https://ko-lay926.github.io/EngTeston/quizzes.json");
  const data = await response.json();
 
 quizData = data;
