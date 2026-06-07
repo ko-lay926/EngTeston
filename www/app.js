@@ -510,6 +510,7 @@ if(week === "week1") return "Week 1";
 if(week === "week2") return "Week 2";
 if(week === "week3") return "Week 3";
 if(week === "week4") return "Week 4";
+if(week === "week5") return "Week 5";
 return week;
 
 }
