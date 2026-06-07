@@ -464,6 +464,13 @@ unlocked.push("week4");
 
 }
 
+if(currentWeek === "week4"
+&& !unlocked.includes("week5")){
+
+unlocked.push("week5");
+
+}
+
 localStorage.setItem(
 "unlockedWeeks",
 JSON.stringify(unlocked)
