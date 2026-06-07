@@ -217,5 +217,58 @@
 "answer": 0
 }
 ]
+},"week5": {
+"questions": [
+{
+"q": "By next year, she ___ here for five years.",
+"options": ["works", "will have worked", "worked"],
+"answer": 1
+},
+{
+"q": "I ___ lunch when my friend called.",
+"options": ["had", "was having", "have"],
+"answer": 1
+},
+{
+"q": "They ___ their homework already.",
+"options": ["finish", "finished", "have finished"],
+"answer": 2
+},
+{
+"q": "He ___ to school before the rain started.",
+"options": ["went", "goes", "going"],
+"answer": 0
+},
+{
+"q": "We ___ dinner by 8 PM tonight.",
+"options": ["will finish", "finished", "finish"],
+"answer": 0
+},
+{
+"q": "She ___ in this city since 2020.",
+"options": ["lives", "lived", "has lived"],
+"answer": 2
+},
+{
+"q": "I ___ my keys yesterday.",
+"options": ["lose", "lost", "have lost"],
+"answer": 1
+},
+{
+"q": "The students ___ quietly now.",
+"options": ["sit", "are sitting", "sat"],
+"answer": 1
+},
+{
+"q": "They ___ a new car next month.",
+"options": ["buy", "bought", "will buy"],
+"answer": 2
+},
+{
+"q": "He ___ coffee every morning.",
+"options": ["drinks", "drank", "drinking"],
+"answer": 0
+}
+]
 }
 }
