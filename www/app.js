@@ -226,7 +226,7 @@ JSON.stringify(data)
 );
 
 alert(
-"Weekly quizzes updated successfully!"
+"Loaded weeks: " + Object.keys(data).join(", ")
 );
  
 }catch(error){
